@@ -5023,6 +5023,19 @@
         </div>
     </div>
 </div>
-
+<script>
+// 修复顶部重复名字 + 强制加载最新16用户数据
+setTimeout(()=>{
+  // 删掉卡片顶部多余重复姓名
+  document.querySelectorAll('.swiper-slide').forEach(s=>{
+    let first = s.firstElementChild;
+    let mainTitle = s.querySelector('h3');
+    if(first && mainTitle && first.innerText.trim() === mainTitle.innerText.trim()) first.remove();
+  })
+  // 清除本地旧缓存，强制拉最新用户列表
+  localStorage.removeItem('HOME_USERS');
+  localStorage.removeItem('HOME_AVATARS');
+}, 500)
+</script>
 </body>
 </html>
