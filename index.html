@@ -261,7 +261,7 @@
             transform-origin: 50% 55%;
             animation: library-hero-breathe 7.5s ease-in-out infinite;
             filter: saturate(1.05) brightness(1.02);
-        }
+       animation: float 3s ease-in-out infinite; }
         /* 用轮廓图做蒙版，让代码光点“沿轮廓游走” */
         .library-hero-code {
             position: absolute;
@@ -748,7 +748,11 @@
             width: 0;
             height: 0;
             display: none;
-        }
+       @keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
